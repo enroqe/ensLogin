@@ -1,0 +1,26 @@
+server:
+  port: 80
+security:
+    oauth2:
+        client:
+            clientId: 701840447757-3njebbt0gdb9sttb5osbea26jhh3o0ge.apps.googleusercontent.com
+            clientSecret: CY5sXrG8FummQ9Xp0JjEh6J-
+            accessTokenUri: https://www.googleapis.com/oauth2/v3/token
+            userAuthorizationUri: https://accounts.google.com/o/oauth2/auth
+            tokenName: oauth_token
+            authenticationScheme: query
+            clientAuthenticationScheme: form
+            scope: profile
+        resource:
+            userInfoUri: https://www.googleapis.com/userinfo/v2/me
+            preferTokenInfo: false
+  
+# Database Connection
+ 
+spring:
+  main.allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 1412
