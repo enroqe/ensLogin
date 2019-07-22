@@ -8,6 +8,9 @@ services:
     container_name: postgresSQL
     environment:
       - PGPASSWORD=yourPassword
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+      - PGDATA=/var/lib/postgresql/data
     volumes:
        - PostgresData:/var/lib/postgresql/data
     networks:
@@ -17,11 +20,11 @@ services:
     build: .
     container_name: ensLogin
     ports:
-     - "80:80"
+     - "8080:80"
     links:
      - database
     depends_on:
-      - database
+     - database
     networks:
         - enslogin_default
 volumes:
