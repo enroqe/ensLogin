@@ -10,13 +10,14 @@
 	</parent>
 	<groupId>com.krone</groupId>
 	<artifactId>ensLogin</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<packaging>jar</packaging>
 	<name>ensLogin</name>
 	<description>login project for Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
+<!-- 		<dockerfile-maven-version>1.4.10</dockerfile-maven-version> -->
 	</properties>
 
 	<dependencies>
@@ -79,14 +80,16 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
+<!-- 		<dependency> -->
+<!-- 		    <groupId>com.spotify</groupId> -->
+<!-- 		    <artifactId>dockerfile-maven-plugin</artifactId> -->
+<!-- 		    <version>1.4.10</version> -->
+<!-- 		</dependency> -->
+		
+		
 	</dependencies>
 
 	<dependencyManagement>
@@ -122,5 +125,26 @@
                 </execution>
             </executions>
         </plugin>
-      </plugins></build>
+<!--         <plugin> -->
+<!--         	<groupId>com.spotify</groupId> -->
+<!--     		<artifactId>dockerfile-maven-plugin</artifactId> -->
+<!--    			 <version>1.4.10</version> -->
+<!--    			 <executions> -->
+<!-- 	   			 <execution> -->
+<!-- 		   			 	<id>default</id> -->
+<!-- 		   			 <goals> -->
+<!-- 			   			 <goal>build</goal> -->
+<!-- 			   			 <goal>push</goal> -->
+<!-- 		   			 </goals> -->
+<!-- 	   			 </execution> -->
+<!--    			 </executions> -->
+<!--    			 <configuration> -->
+<!--    			 	<username>enroq</username> -->
+<!--    			 	<password>14127900K</password> -->
+<!--    			 	<repository>enroq/krone/ensLogin</repository> -->
+<!--    			 	<tag>${project.version}</tag> -->
+<!--    			 </configuration>   			  -->
+<!--         </plugin> -->
+      </plugins>
+      </build>
 </project>

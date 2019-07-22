@@ -177,7 +177,7 @@ public class MainController {
 		        	stringMapTable.append("</tr><tr>");
 		        
 		        stringMapTable.append("<td id=\""+list.get(i).getUniqueId()+"\">" +
-		        "<a href=\"http://myenslogin.com/matchScores?uniqueId="+list.get(i).getUniqueId()+"\">"
+		        "<a href=\"/matchScores?uniqueId="+list.get(i).getUniqueId()+"\">"
 		        		+createTable(list.get(i))+"</a>" 
 		        		+ "</td>");
 		    }
