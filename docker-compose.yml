@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  database:
+    image: postgres
+    ports:
+       - "5432:5432"
+    container_name: postgresSQL
+    environment:
+      - PGPASSWORD=yourPassword
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+      - PGDATA=/var/lib/postgresql/data
+    volumes:
+       - PostgresData:/var/lib/postgresql/data
+    networks:
+        - enslogin_default
+
+  app:
+    build: .
+    container_name: ensLogin
+    ports:
+     - "8080:80"
+    links:
+     - database
+    depends_on:
+     - database
+    networks:
+        - enslogin_default
+volumes:
+    PostgresData:
+        external:
+            name: enslogin_PostgresData
+networks:
+    enslogin_default:
+        external: true
